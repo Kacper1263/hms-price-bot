@@ -36,6 +36,11 @@ The code is very simple so it supports only one server and all configuration is 
     }
     ```
 
+    > Alternatively, you can set the following environment variables:
+    > - `DISCORD_BOT_TOKEN`: Your Discord bot token.
+    > - `DISCORD_VOICE_CHANNEL_ID`: The ID of the voice channel where you want the bot to display the token price.
+
+
 4. **Run the bot:**
 
     Run the bot using Node.js:

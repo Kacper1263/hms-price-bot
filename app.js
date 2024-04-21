@@ -15,8 +15,25 @@ if (!fs.existsSync(configPath)) {
 
 // Read data from the configuration file
 const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-const token = config.token;
-const channelId = config.channelId;
+
+// Read data from environment variables or fallback to config file
+const token = process.env.DISCORD_BOT_TOKEN || readConfig().token;
+const channelId = process.env.DISCORD_VOICE_CHANNEL_ID || readConfig().channelId;
+
+// Function to read config data from file or return empty object
+function readConfig() {
+    try {
+        const configPath = 'config.json';
+        if (!fs.existsSync(configPath)) {
+            console.error('Config file does not exist.');
+            return {};
+        }
+        return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+    } catch (error) {
+        console.error('Error reading config file:', error);
+        return {};
+    }
+}
 
 if(!token) {
     console.error('Token is not provided in the configuration file.');
