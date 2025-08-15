@@ -44,8 +44,8 @@ if(!channelId) {
     process.exit(1);
 }
 
-const apiUrl = 'https://api.xeggex.com/api/v2/market/getbysymbol/HMS%2FUSDT';
-const mainInterval = 10 * 1000; // Interval for Xeggex API in milliseconds (e.g., 10 seconds)
+const apiUrl = 'https://api.nonkyc.io//api/v2/market/getbysymbol/HMS%2FUSDT';
+const mainInterval = 10 * 1000; // Interval for Nonkyc API in milliseconds (e.g., 10 seconds)
 const setNameInterval = 5 * 60 * 1000; // Interval for updating channel name in milliseconds (e.g., 5 minutes) - Discord API rate limit is 2 requests per 10 minutes
 let lastPrice = null; // Variable to store the last price
 let lastSetNameTime = 0; // Variable to store the timestamp of the last channel name update
